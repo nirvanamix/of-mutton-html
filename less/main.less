@@ -2,11 +2,6 @@
 	font-family: 'Avenir';
 	src: url('../fonts/avenir/Avenir-Roman.woff2') format('woff2');
 }
-
-
-
-
-
 @font-Noto: 'Noto Serif', serif;
 @font-open-sans: 'Open Sans', sans-serif;
 @font-poppins: 'Poppins', sans-serif;
@@ -42,6 +37,15 @@ a{
 		color: #948424;
 	}
 }
+h1, .h1{
+	font-size: 4.8rem;
+	line-height: 1.22em;
+	font-family: @font-Noto;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	
+}
 h2, .h2{
 	text-align: center;
 	font-family: @font-Noto;
@@ -72,6 +76,12 @@ p{
 	line-height: 1.38em;
 	color: #3A444C;
 	margin-bottom: 2rem;
+	a{
+		color: #15489E;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
 }
 .link-style-1{
 	a{
@@ -593,6 +603,39 @@ p{
 		}
 	}
 }
+.history-block{
+	background: #F3F3F3;
+	.item{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 0;
+		&:nth-child(2){
+			flex-direction: row-reverse;
+			.text{
+				padding-left: 10rem;
+				padding-right: 0;
+			}
+		}
+	}
+	.img{
+		width: 49.2%;
+		img{
+			width: 100%;
+			display: block;
+			margin: 0;
+		}
+	}
+	.text{
+		width: 45.7%;
+		padding: 2rem 10rem 2rem 0;
+	}
+	p{
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
 /*----------------------------------------------------------------*/
 header{
 	padding: 3.3rem 0;
@@ -779,18 +822,14 @@ header{
 		position: relative;
 	}
 	h1, .h1{
-		font-size: 4.8rem;
-		line-height: 1.22em;
+		color: #fff;
 		position: absolute;
 		z-index: 1;
-		color: #fff;
 		right: 15px;
 		bottom: 7.3rem;
 		z-index: 1;
 		text-align: right;
-		font-family: @font-Noto;
-		font-weight: 700;
-		text-transform: uppercase;
+		margin: 0;
 		letter-spacing: -0.01em;
 	}
 	.owl-main{
@@ -896,6 +935,8 @@ footer{
 		}
 	}
 	h2, .h2{
+		font-size: 2.8em;
+		max-width: 47rem;
 		line-height: 1.36em;
 		text-align: left;
 		text-transform: none;
@@ -903,8 +944,6 @@ footer{
 		letter-spacing: -0.01em;
 	}
 	p{
-		font-size: 2em;
-		line-height: 1.35em;
 		max-width: 46rem;
 	}
 	img{
@@ -959,8 +998,6 @@ footer{
 					background: #697E3E;
 				}
 			}
-
-
 		}
 		.border{
 			width: 192rem;
@@ -1044,9 +1081,47 @@ footer{
 			margin-bottom: 0;
 		}
 	}
+	&.history{
+		p{
+			font-size: 1.6em;
+			margin-bottom: 2.3rem;
+			word-wrap: break-word;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.block-text::before{
+			background: #68645D;
+		}
+		.items .border::before{
+			background: #68645D;
+		}
+	}
 }
-
-
+.section-history-title{
+	height: calc(100vh - 8rem);
+	position: relative;
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50%;
+		display: block;
+	}
+	.text-position{
+		width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 4rem;
+		text-align: right;
+	}
+	h1, .h1{
+		color: #fff;
+	}
+}
+.section-history-content{
+	padding: 9rem 0 1px;
+}
 
 
 

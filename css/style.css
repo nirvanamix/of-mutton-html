@@ -455,6 +455,15 @@ a {
 a:hover {
   color: #948424;
 }
+h1,
+.h1 {
+  font-size: 4.8rem;
+  line-height: 1.22em;
+  font-family: 'Noto Serif', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
 h2,
 .h2 {
   text-align: center;
@@ -488,6 +497,12 @@ p {
   line-height: 1.38em;
   color: #3A444C;
   margin-bottom: 2rem;
+}
+p a {
+  color: #15489E;
+}
+p a:hover {
+  text-decoration: underline;
 }
 .link-style-1 a {
   display: inline-block;
@@ -1086,6 +1101,46 @@ p {
   width: 2.3rem;
   height: 1.9rem;
 }
+.history-block {
+  background: #F3F3F3;
+}
+.history-block .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+.history-block .item:nth-child(2) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+.history-block .item:nth-child(2) .text {
+  padding-left: 10rem;
+  padding-right: 0;
+}
+.history-block .img {
+  width: 49.2%;
+}
+.history-block .img img {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+.history-block .text {
+  width: 45.7%;
+  padding: 2rem 10rem 2rem 0;
+}
+.history-block p:last-child {
+  margin-bottom: 0;
+}
 /*----------------------------------------------------------------*/
 header {
   padding: 3.3rem 0;
@@ -1315,17 +1370,13 @@ header .mobile-nav div:last-child {
 }
 .section-title h1,
 .section-title .h1 {
-  font-size: 4.8rem;
-  line-height: 1.22em;
-  position: absolute;
   color: #fff;
+  position: absolute;
   right: 15px;
   bottom: 7.3rem;
   z-index: 1;
   text-align: right;
-  font-family: 'Noto Serif', serif;
-  font-weight: 700;
-  text-transform: uppercase;
+  margin: 0;
   letter-spacing: -0.01em;
 }
 .section-title .owl-main .owl-nav {
@@ -1448,6 +1499,8 @@ footer .contact .item:last-child {
 }
 .section-title-about h2,
 .section-title-about .h2 {
+  font-size: 2.8em;
+  max-width: 47rem;
   line-height: 1.36em;
   text-align: left;
   text-transform: none;
@@ -1455,8 +1508,6 @@ footer .contact .item:last-child {
   letter-spacing: -0.01em;
 }
 .section-title-about p {
-  font-size: 2em;
-  line-height: 1.35em;
   max-width: 46rem;
 }
 .section-title-about img {
@@ -1604,6 +1655,47 @@ footer .contact .item:last-child {
 .section-about-lists p:last-child {
   margin-bottom: 0;
 }
+.section-about-lists.history p {
+  font-size: 1.6em;
+  margin-bottom: 2.3rem;
+  word-wrap: break-word;
+}
+.section-about-lists.history p:last-child {
+  margin-bottom: 0;
+}
+.section-about-lists.history .block-text::before {
+  background: #68645D;
+}
+.section-about-lists.history .items .border::before {
+  background: #68645D;
+}
+.section-history-title {
+  height: calc(100vh - 8rem);
+  position: relative;
+}
+.section-history-title img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50%;
+  object-position: 50%;
+  display: block;
+}
+.section-history-title .text-position {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 4rem;
+  text-align: right;
+}
+.section-history-title h1,
+.section-history-title .h1 {
+  color: #fff;
+}
+.section-history-content {
+  padding: 9rem 0 1px;
+}
 @media (max-width: 1399px) {
   html,
   body {
@@ -1621,6 +1713,11 @@ footer .contact .item:last-child {
   html.oveflow-mobile,
   body.oveflow-mobile {
     overflow: hidden;
+  }
+  h1,
+  .h1 {
+    font-size: 3.2rem;
+    bottom: 2.3rem;
   }
   .link-style-2 a {
     font-size: 1.4em;
@@ -1812,11 +1909,6 @@ footer .contact .item:last-child {
   header .mobile-nav {
     display: block;
   }
-  .section-title h1,
-  .section-title .h1 {
-    font-size: 3.2rem;
-    bottom: 2.3rem;
-  }
   .section-title .owl-main .owl-dots {
     position: relative;
     left: auto;
@@ -1994,8 +2086,32 @@ footer .contact .item:last-child {
     bottom: -3rem;
     border-radius: 0 0 0.5rem 0.5rem !important;
   }
+  .section-history-title {
+    height: auto;
+  }
+  .history-block {
+    margin-left: -15px;
+    width: calc(100% + 30px);
+  }
+  .history-block .item:nth-child(2) .text {
+    padding-left: 15px;
+  }
+  .history-block .text {
+    padding-right: 15px;
+  }
+  .history-block p {
+    font-size: 1.6em;
+  }
+  .section-about-lists.history p {
+    font-size: 1.4em;
+  }
 }
 @media (max-width: 599px) {
+  h1,
+  .h1 {
+    font-size: 2.4em;
+    bottom: 2.5rem;
+  }
   .h2,
   h2 {
     font-size: 2.8em;
@@ -2009,7 +2125,9 @@ footer .contact .item:last-child {
     padding: 2.6rem 0;
   }
   header .mobile-nav {
-    width: 1.8rem;
+    width: 2.8rem;
+    padding: 0 0.5rem;
+    right: calc(15px - 0.5rem);
   }
   header .mobile-nav div {
     height: 0.1rem;
@@ -2035,11 +2153,6 @@ footer .contact .item:last-child {
     object-fit: cover;
     -o-object-position: 50%;
     object-position: 50%;
-  }
-  .section-title .owl-main h1,
-  .section-title .owl-main .h1 {
-    font-size: 2.4em;
-    bottom: 2.5rem;
   }
   .section-title .owl-main .owl-dots {
     margin-top: 0.6rem;
@@ -2232,5 +2345,34 @@ footer .contact .item:last-child {
   .section-about-lists .block-text .text {
     width: 100%;
     padding: 1.7rem 0 5rem !important;
+  }
+  .section-history-title img {
+    height: 129.5vw;
+    -o-object-position: 76% bottom;
+    object-position: 76% bottom;
+  }
+  .section-history-title .text-position {
+    bottom: 2.4rem;
+  }
+  .section-history-content {
+    padding: 4.6rem 0 1px;
+  }
+  .history-block {
+    padding-bottom: 5.1rem;
+  }
+  .history-block .item {
+    display: block;
+    margin-bottom: 4.6rem;
+  }
+  .history-block .item:last-child {
+    margin-bottom: 0;
+  }
+  .history-block .img {
+    width: 100%;
+    margin-bottom: 3.3rem;
+  }
+  .history-block .text {
+    width: 100%;
+    padding: 0 15px !important;
   }
 }
