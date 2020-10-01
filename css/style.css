@@ -518,7 +518,17 @@ p a:hover {
   border-color: #948424;
   color: #fff;
 }
-.link-style-2 a {
+.link-style-2 a:before,
+.link-style-2 a:after {
+  background: -o-linear-gradient(318.6deg, #68645D -9.75%, #29281F 84.22%);
+  background: linear-gradient(131.4deg, #68645D -9.75%, #29281F 84.22%);
+}
+.link-style-2 a:after {
+  background: -o-linear-gradient(318.6deg, #29281F -9.75%, #68645D 84.22%);
+  background: linear-gradient(131.4deg, #29281F -9.75%, #68645D 84.22%);
+}
+.link-style-2 a,
+.link-style-3 a {
   display: inline-block;
   font-size: 1.8em;
   text-transform: uppercase;
@@ -527,12 +537,16 @@ p a:hover {
   padding: 0.95em 3.7em;
   z-index: 1;
   font-family: 'Avenir', sans-serif;
+  text-align: center;
 }
-.link-style-2 a:hover:after {
+.link-style-2 a:hover:after,
+.link-style-3 a:hover:after {
   opacity: 1;
 }
 .link-style-2 a:before,
-.link-style-2 a:after {
+.link-style-3 a:before,
+.link-style-2 a:after,
+.link-style-3 a:after {
   content: '';
   width: 100%;
   height: 100%;
@@ -540,8 +554,6 @@ p a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  background: -o-linear-gradient(318.6deg, #68645D -9.75%, #29281F 84.22%);
-  background: linear-gradient(131.4deg, #68645D -9.75%, #29281F 84.22%);
   -webkit-box-shadow: 0px 3.26064px 9.23848px rgba(31, 121, 230, 0.2);
   box-shadow: 0px 3.26064px 9.23848px rgba(31, 121, 230, 0.2);
   border-radius: 0.8rem;
@@ -550,10 +562,18 @@ p a:hover {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-.link-style-2 a:after {
-  background: -o-linear-gradient(318.6deg, #29281F -9.75%, #68645D 84.22%);
-  background: linear-gradient(131.4deg, #29281F -9.75%, #68645D 84.22%);
+.link-style-2 a:after,
+.link-style-3 a:after {
   opacity: 0;
+}
+.link-style-3 a:before,
+.link-style-3 a:after {
+  background: -o-linear-gradient(318.6deg, #970030 -9.75%, #733043 84.22%);
+  background: linear-gradient(131.4deg, #970030 -9.75%, #733043 84.22%);
+}
+.link-style-3 a:after {
+  background: -o-linear-gradient(318.6deg, #733043 -9.75%, #970030 84.22%);
+  background: linear-gradient(131.4deg, #733043 -9.75%, #970030 84.22%);
 }
 .welcome-block {
   display: -webkit-box;
@@ -1141,6 +1161,67 @@ p a:hover {
 .history-block p:last-child {
   margin-bottom: 0;
 }
+blockquote,
+.blockquote {
+  background: #FFFDD6;
+  padding: 6.4rem 10.8rem 7.5rem;
+  font-size: 1.8em;
+  line-height: 1.38em;
+  max-width: 101rem;
+  margin: 0 auto 6.1rem;
+  font-weight: 400;
+}
+blockquote span,
+.blockquote span {
+  display: block;
+  margin-bottom: 2.6rem;
+}
+blockquote span:last-child,
+.blockquote span:last-child {
+  margin-bottom: 0;
+}
+.recipe-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #FFEAEA;
+}
+.recipe-block .item:first-child {
+  width: 44.5%;
+  padding: 1.5rem 0 1.5rem 10.1rem;
+}
+.recipe-block .item:nth-child(2) {
+  width: 49.8%;
+}
+.recipe-block img {
+  width: 100%;
+}
+.recipe-block p {
+  margin-bottom: 1rem;
+}
+.recipe-block p:last-child {
+  margin-bottom: 0;
+}
+.recipe-block p.title-text {
+  color: #970030;
+  font-size: 2em;
+  line-height: 1.35em;
+  font-style: italic;
+}
+.recipe-block .teg {
+  font-size: 1.8em;
+  border-bottom: 1px solid #90A4AF;
+  padding-bottom: 0.7rem;
+  margin-bottom: 4rem;
+  text-align: right;
+  font-weight: 700;
+}
 /*----------------------------------------------------------------*/
 header {
   padding: 3.3rem 0;
@@ -1482,6 +1563,9 @@ footer .contact .item:last-child {
   margin-right: 0;
 }
 /*--------------------------inner page--------------------------*/
+.section-title-about.thems-pink .items {
+  background: #E8D6DB;
+}
 .section-title-about .items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1620,6 +1704,7 @@ footer .contact .item:last-child {
   align-items: center;
   padding: 6rem 0;
   position: relative;
+  border-radius: 0.5rem;
 }
 .section-about-lists .block-text:before {
   content: '';
@@ -1655,6 +1740,9 @@ footer .contact .item:last-child {
 .section-about-lists p:last-child {
   margin-bottom: 0;
 }
+.section-about-lists p.italic {
+  font-style: italic;
+}
 .section-about-lists.history p {
   font-size: 1.6em;
   margin-bottom: 2.3rem;
@@ -1668,6 +1756,28 @@ footer .contact .item:last-child {
 }
 .section-about-lists.history .items .border::before {
   background: #68645D;
+}
+.section-about-lists.tea-rooms {
+  border-bottom: 0.4rem solid #F0F4F4;
+  padding-bottom: 3.9rem;
+}
+.section-about-lists.tea-rooms .block-text::before {
+  background: #773145;
+}
+.section-about-lists.tea-rooms .items .border::before {
+  background: #773145;
+}
+.section-about-lists.tea-rooms p.italic {
+  color: #970030;
+}
+.section-about-lists.tea-rooms .items {
+  margin-bottom: 5.2rem;
+}
+.section-about-lists .link-style-2 a,
+.section-about-lists .link-style-3 a {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .section-history-title {
   height: calc(100vh - 8rem);
@@ -1695,6 +1805,9 @@ footer .contact .item:last-child {
 }
 .section-history-content {
   padding: 9rem 0 1px;
+}
+.section-tea-rooms {
+  padding: 6rem 0 4rem;
 }
 @media (max-width: 1399px) {
   html,
@@ -1731,6 +1844,10 @@ footer .contact .item:last-child {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+  }
+  .blockquote,
+  blockquote {
+    padding: 4rem 3rem;
   }
   header .mobile-wr {
     background: #fff;
@@ -2105,6 +2222,9 @@ footer .contact .item:last-child {
   .section-about-lists.history p {
     font-size: 1.4em;
   }
+  .recipe-block .item:first-child {
+    padding: 2rem 0 2rem 1.5rem;
+  }
 }
 @media (max-width: 599px) {
   h1,
@@ -2374,5 +2494,39 @@ footer .contact .item:last-child {
   .history-block .text {
     width: 100%;
     padding: 0 15px !important;
+  }
+  .section-tea-rooms {
+    padding: 0 0 2rem;
+  }
+  .blockquote,
+  blockquote {
+    margin-left: -15px;
+    width: calc(100% + 30px);
+    padding: 5.1rem 15px 5.1rem;
+    font-size: 1.6em;
+  }
+  .blockquote span,
+  blockquote span {
+    margin-bottom: 2rem;
+  }
+  .recipe-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    margin-left: -15px;
+    width: calc(100% + 30px);
+  }
+  .recipe-block .item {
+    width: 100% !important;
+  }
+  .recipe-block .item:last-child {
+    margin-bottom: 0.5rem;
+  }
+  .recipe-block .item:first-child {
+    padding: 2rem 15px 2rem;
+  }
+  .recipe-block p {
+    font-size: 1.6em;
   }
 }

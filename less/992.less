@@ -17,6 +17,9 @@ h1, .h1{
 	transition: transform 0.4s;
 	transform: translateX(0);
 }
+.blockquote, blockquote{
+	padding: 4rem 3rem;
+}
 header{
 	.mobile-wr{
 		background: #fff;
@@ -381,7 +384,13 @@ footer{
 }
 
 
-
+.recipe-block{
+	.item{
+		&:first-child{
+			padding: 2rem 0 2rem 1.5rem;
+		}
+	}
+}
 
 
 
